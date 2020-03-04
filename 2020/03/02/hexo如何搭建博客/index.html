@@ -2,12 +2,13 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
   
   <title>Hexo博客框架 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-    <meta name="keywords" content="MinHow,MinHow's Blog" />
-  
   <meta name="description" content="Hexo 是高效的静态站点生成框架，它基于Node.js。通过Hexo你可以轻松地使用Markdown编写文章，除了Markdown本身的语法之外，还可以使用Hexo提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo技术比较成熟很多问题可以在网上找到，速度上也有很大的优势。一 部署环境    我们了解到Hexo是基于Node.js的它是一个基于ChromeV8引擎 的Jav">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客框架">
@@ -23,129 +24,302 @@
 <meta property="article:tag" content="javaScript">
 <meta name="twitter:card" content="summary">
   
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
-    <link rel="icon" href="/favicon.ico">
   
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
   
 <link rel="stylesheet" href="/css/style.css">
 
-  
-<script src="/js/pace.min.js"></script>
-
-  
-
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
   
-
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
 <meta name="generator" content="Hexo 4.2.0"></head>
-
 <body>
   <div id="container">
-      <header id="header">
-    <div id="banner"></div>
-    <div id="header-outer">
-        <div id="header-menu" class="header-menu-pos animated">
-            <div class="header-menu-container">
-                <a href="/" class="left">
-                    <span class="site-title">李凯的博客</span>
-                </a>
-                <nav id="header-menu-nav" class="right">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">John Doe</a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">玩转开发工具</a></li>
+                        
+                            <li><a  href="/categories/digital">玩转数码</a></li>
+                        
+                            <li><a  href="/categories/algorithm">算法学习</a></li>
+                        
+                            <li><a  href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="/xxxxx" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Second/" style="font-size: 10px;">Second</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
                     
-                    <a  href="/">
-                        <i class="fa fa-home"></i>
-                        <span>Home</span>
-                    </a>
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.csdn.net/baidu_21483933">csdn</a>
                     
-                    <a  href="/archives">
-                        <i class="fa fa-archive"></i>
-                        <span>Archives</span>
-                    </a>
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/blog/maocg_web">segmentfault</a>
                     
-                    <a  href="/about">
-                        <i class="fa fa-user"></i>
-                        <span>About</span>
-                    </a>
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/eb37ef89c746/latest_articles">简书</a>
                     
-                </nav>
-                <a class="mobile-header-menu-button">
-                    <i class="fa fa-bars"></i>
-                </a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">爱动漫,爱游戏,爱编程,爱运动,爱的太多了!</div>
+                </section>
+                
             </div>
         </div>
-        <div id="header-row">
-            <div id="logo">
-                <a href="/">
-                    <img src="/images/logo.png" alt="logo">
-                </a>
-            </div>
-            <div class="header-info">
-                <div id="header-title">
-                    
-                    <h2>
-                        李凯的博客
-                    </h2>
-                    
-                </div>
-                <div id="header-description">
-                    
-                    <h3>
-                        一个专注 WEB 开发的技术博客
-                    </h3>
-                    
-                </div>
-            </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">John Doe</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">John Doe</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">玩转开发工具</a></li>
+                
+                    <li><a href="/categories/digital">玩转数码</a></li>
+                
+                    <li><a href="/categories/algorithm">算法学习</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
             <nav class="header-nav">
                 <div class="social">
                     
-                        <a title="MinHow" target="_blank" href="//minhow.com">
-                            <i class="fa fa-home fa-2x"></i></a>
+                        <a class="github" target="_blank" href="/xxxxx" title="github">github</a>
                     
-                        <a title="Github" target="_blank" href="//github.com/wongminho">
-                            <i class="fa fa-github fa-2x"></i></a>
+                        <a class="weibo" target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
                     
-                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
-                            <i class="fa fa-weibo fa-2x"></i></a>
-                    
-                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
-                            <i class="fa fa-twitter fa-2x"></i></a>
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
                     
                 </div>
             </nav>
-        </div>
+        </header>
     </div>
-</header>
-      <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-hexo如何搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
+</nav>
+      <div class="body-wrap"><article id="post-hexo如何搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/03/02/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="article-date">
+      <time datetime="2020-03-02T13:35:21.000Z" itemprop="datePublished">2020-03-02</time>
+</a>
+
+    </div>
+  
   <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
     
       <header class="article-header">
         
   
-    <h1 class="post-title" itemprop="name">
+    <h1 class="article-title" itemprop="name">
       Hexo博客框架
     </h1>
-    <div class="post-title-bar">
-      <ul>
-          
-        <li>
-          <i class="fa fa-calendar"></i>  2020-03-02
-        </li>
-        <li>
-          <i class="fa fa-eye"></i>
-          <span id="busuanzi_value_page_pv"></span>
-        </li>
-      </ul>
-    </div>
   
 
-          
+
       </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
       
-            
-            <h2 id="Hexo-是高效的静态站点生成框架，它基于Node-js。通过Hexo你可以轻松地使用Markdown编写文章，除了Markdown本身的语法之外，还可以使用Hexo提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo技术比较成熟很多问题可以在网上找到，速度上也有很大的优势。"><a href="#Hexo-是高效的静态站点生成框架，它基于Node-js。通过Hexo你可以轻松地使用Markdown编写文章，除了Markdown本身的语法之外，还可以使用Hexo提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo技术比较成熟很多问题可以在网上找到，速度上也有很大的优势。" class="headerlink" title="  Hexo 是高效的静态站点生成框架，它基于Node.js。通过Hexo你可以轻松地使用Markdown编写文章，除了Markdown本身的语法之外，还可以使用Hexo提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo技术比较成熟很多问题可以在网上找到，速度上也有很大的优势。"></a>  Hexo 是高效的静态站点生成框架，它基于Node.js。通过Hexo你可以轻松地使用Markdown编写文章，除了Markdown本身的语法之外，还可以使用Hexo提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo技术比较成熟很多问题可以在网上找到，速度上也有很大的优势。</h2><h5 id="一-部署环境"><a href="#一-部署环境" class="headerlink" title="一 部署环境"></a>一 部署环境</h5><hr>
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Second/" rel="tag">Second</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaScript/" rel="tag">javaScript</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="Hexo-是高效的静态站点生成框架，它基于Node-js。通过Hexo你可以轻松地使用Markdown编写文章，除了Markdown本身的语法之外，还可以使用Hexo提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo技术比较成熟很多问题可以在网上找到，速度上也有很大的优势。"><a href="#Hexo-是高效的静态站点生成框架，它基于Node-js。通过Hexo你可以轻松地使用Markdown编写文章，除了Markdown本身的语法之外，还可以使用Hexo提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo技术比较成熟很多问题可以在网上找到，速度上也有很大的优势。" class="headerlink" title="  Hexo 是高效的静态站点生成框架，它基于Node.js。通过Hexo你可以轻松地使用Markdown编写文章，除了Markdown本身的语法之外，还可以使用Hexo提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo技术比较成熟很多问题可以在网上找到，速度上也有很大的优势。"></a>  Hexo 是高效的静态站点生成框架，它基于Node.js。通过Hexo你可以轻松地使用Markdown编写文章，除了Markdown本身的语法之外，还可以使用Hexo提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo技术比较成熟很多问题可以在网上找到，速度上也有很大的优势。</h2><h5 id="一-部署环境"><a href="#一-部署环境" class="headerlink" title="一 部署环境"></a>一 部署环境</h5><hr>
 <pre><code>   我们了解到Hexo是基于Node.js的它是一个基于ChromeV8引擎
 的JavaScript运行环境，可在非浏览器环境下，解释运行JS代码。
 所以在搭建博客之前需要先去官网下载node.js，下载LTS(长期支持版)，
@@ -172,277 +346,289 @@
 
 
 }</code></pre><h5 id="五-给自己的博客换主题"><a href="#五-给自己的博客换主题" class="headerlink" title="五 给自己的博客换主题"></a>五 给自己的博客换主题</h5>
-            <div class="post-copyright">
-    <div class="content">
-        <p>最后更新： 2020年03月03日 18:59</p>
-        <p>原始链接： <a class="post-url" href="/2020/03/02/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" title="Hexo博客框架">http://yoursite.com/2020/03/02/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</a></p>
-        <footer>
-            <a href="http://yoursite.com">
-                <img src="/images/logo.png" alt="John Doe">
-                John Doe
-            </a>
-        </footer>
+      
     </div>
-</div>
-
-      
-        
-            
-
-        
-    </div>
-    <footer class="article-footer">
-        
-        
-<div class="post-share">
-    <a href="javascript:;" id="share-sub" class="post-share-fab">
-        <i class="fa fa-share-alt"></i>
-    </a>
-    <div class="post-share-list" id="share-list">
-        <ul class="share-icons">
-          <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/03/02/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/&title=《Hexo博客框架》 — Hexo&pic=https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3808221123,606832969&fm=26&gp=0.jpg" data-title="微博">
-              <i class="fa fa-weibo"></i>
-            </a>
-          </li>
-          <li>
-            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
-              <i class="fa fa-weixin"></i>
-            </a>
-          </li>
-          <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/03/02/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/&title=《Hexo博客框架》 — Hexo&source=" data-title="QQ">
-              <i class="fa fa-qq"></i>
-            </a>
-          </li>
-          <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/02/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-title="Facebook">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hexo博客框架》 — Hexo&url=http://yoursite.com/2020/03/02/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/&via=http://yoursite.com" data-title="Twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/03/02/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-title="Google+">
-              <i class="fa fa-google-plus"></i>
-            </a>
-          </li>
-        </ul>
-     </div>
-</div>
-<div class="post-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;" id="wxShare-close">×</a>
-    <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/03/02/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
-</div>
-
-<div class="mask"></div>
-
-        
-        <ul class="article-footer-menu">
-            
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/Second/" class="color2">Second</a>
-      
-    <a href="/tags/c++/" class="color4">c++</a>
-      
-    <a href="/tags/javaScript/" class="color1">javaScript</a>
-      
-  </li>
-
-        </ul>
-        
-    </footer>
-  </div>
-</article>
-
-
-    <aside class="post-toc-pos post-toc-top" id="post-toc">
-        <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hexo-是高效的静态站点生成框架，它基于Node-js。通过Hexo你可以轻松地使用Markdown编写文章，除了Markdown本身的语法之外，还可以使用Hexo提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo技术比较成熟很多问题可以在网上找到，速度上也有很大的优势。"><span class="post-toc-text">  Hexo 是高效的静态站点生成框架，它基于Node.js。通过Hexo你可以轻松地使用Markdown编写文章，除了Markdown本身的语法之外，还可以使用Hexo提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo技术比较成熟很多问题可以在网上找到，速度上也有很大的优势。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一-部署环境"><span class="post-toc-text">一 部署环境</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#二-初始化博客"><span class="post-toc-text">二 初始化博客</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#三-写博客"><span class="post-toc-text">三 写博客</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#四-把个人博客部署到远端"><span class="post-toc-text">四 把个人博客部署到远端</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#五-给自己的博客换主题"><span class="post-toc-text">五 给自己的博客换主题</span></a></li></ol></li></ol></li></ol></li></ol>
-        </nav>
-    </aside>
     
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2020/03/02/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">Hexo博客框架</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 John Doe 的个人博客">John Doe</a></p>
+        <p><span>发布时间:</span>2020年03月02日 - 21时35分</p>
+        <p><span>最后更新:</span>2020年03月03日 - 18时59分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/02/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" title="Hexo博客框架">http://yoursite.com/2020/03/02/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2020/03/02/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/　　作者: John Doe" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
 
 <nav id="article-nav">
   
-    <a href="/2020/03/03/Markdown/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+    <a  href="/2020/03/03/Vue.js/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
         
-          Markdown
+          Vue.js
         
-      </span>
+      </div>
     </a>
   
   
-    <a href="/2020/03/02/%E6%9D%8E%E5%87%AF%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">李凯第一篇博客</span>
-      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    <a  href="/2020/03/02/%E6%9D%8E%E5%87%AF%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">李凯第一篇博客</div>
+      <strong class="article-nav-caption">></strong>
     </a>
   
 </nav>
 
 
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-是高效的静态站点生成框架，它基于Node-js。通过Hexo你可以轻松地使用Markdown编写文章，除了Markdown本身的语法之外，还可以使用Hexo提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo技术比较成熟很多问题可以在网上找到，速度上也有很大的优势。"><span class="toc-number">1.</span> <span class="toc-text">  Hexo 是高效的静态站点生成框架，它基于Node.js。通过Hexo你可以轻松地使用Markdown编写文章，除了Markdown本身的语法之外，还可以使用Hexo提供的标签插件来快速的插入特定形式的内容，而且相对于其他框架，Hexo技术比较成熟很多问题可以在网上找到，速度上也有很大的优势。</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一-部署环境"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">一 部署环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二-初始化博客"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">二 初始化博客</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三-写博客"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">三 写博客</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#四-把个人博客部署到远端"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">四 把个人博客部署到远端</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#五-给自己的博客换主题"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">五 给自己的博客换主题</span></a></li></ol></li></ol></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
 
     
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
 </section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-      </div>
+            <a  href="/2020/03/03/Vue.js/" title="上一篇: Vue.js">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2020/03/02/%E6%9D%8E%E5%87%AF%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="下一篇: 李凯第一篇博客">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/03/03/Markdown/">Markdown</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/03/Vue/">Vue.js</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/03/Vue.js/">Vue.js</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/02/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">Hexo博客框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/02/%E6%9D%8E%E5%87%AF%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">李凯第一篇博客</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
       <footer id="footer">
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-<p>
-    <span id="busuanzi_container_site_uv" style='display:none'>
-        总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style='display:none'>
-        总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
-
-
-      <p>
-        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
-        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
-      &copy; 2020 John Doe<br>
-      </p>
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2020 John Doe
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
     </div>
-  </div>
 </footer>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script>
-  var mihoConfig = {
-      root: "http://yoursite.com",
-      animate: true,
-      isHome: false,
-      share: true,
-      reward: 0
-  }
-</script>
-<div class="sidebar">
-    <div id="sidebar-search" title="Search">
-        <i class="fa fa-search"></i>
-    </div>
-    <div id="sidebar-category" title="Categories">
-        <i class="fa fa-book"></i>
-    </div>
-    <div id="sidebar-tag" title="Tags">
-        <i class="fa fa-tags"></i>
-    </div>
-    <div id="sidebar-top">
-        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
-    </div>
-</div>
-<div class="sidebar-menu-box" id="sidebar-menu-box">
-    <div class="sidebar-menu-box-container">
-        <div id="sidebar-menu-box-categories">
-            <a class="category-link" href="/categories/Markdown/">Markdown</a>
-        </div>
-        <div id="sidebar-menu-box-tags">
-            <a href="/tags/Second/" style="font-size: 10px;">Second</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a>
-        </div>
-    </div>
-    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
-</div>
-<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
-    <div class="mobile-header-menu-container">
-        <span class="title">Menus</span>
-        <ul class="mobile-header-menu-navbar">
-            
-            <li>
-                <a  href="/">
-                    <i class="fa fa-home"></i><span>Home</span>
-                </a>
-            </li>
-            
-            <li>
-                <a  href="/archives">
-                    <i class="fa fa-archive"></i><span>Archives</span>
-                </a>
-            </li>
-            
-            <li>
-                <a  href="/about">
-                    <i class="fa fa-user"></i><span>About</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-    <div class="mobile-header-tag-container">
-        <span class="title">Tags</span>
-        <div id="mobile-header-container-tags">
-            <a href="/tags/Second/" style="font-size: 10px;">Second</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a>
-        </div>
-    </div>
-</div>
-<div class="search-wrap">
-    <span class="search-close">&times;</span>
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-            <i class="icon icon-lg icon-chevron-left"></i>
-        </a>
-        <input class="search-field" placeholder="Search..." id="keywords">
-        <a id="search-submit" href="javascript:;">
-            <i class="fa fa-search"></i>
-        </a>
-    <div class="search-container" id="search-container">
-        <ul class="search-result" id="search-result">
-        </ul>
-    </div>
-</div>
 
-<div id="search-tpl">
-    <li class="search-result-item">
-        <a href="{url}" class="search-item-li">
-            <span class="search-item-li-title" title="{title}">{title}</span>
-        </a>
-    </li>
-</div>
-
-<script src="/js/search.js"></script>
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
 
 <script src="/js/main.js"></script>
 
 
-
-  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
-  <div id="particles"></div>
-  
-<script src="/js/particles.js"></script>
-
-
-
-
-
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
 
 
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  
-<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
 
-  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
-  
-<script src="/js/animate.js"></script>
-
+</script>
+<!-- End Google Analytics -->
 
 
-  
-<script src="/js/pop-img.js"></script>
 
-  <script>
-     $(".article-entry p img").popImg();
-  </script>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
 
   </div>
 </body>
