@@ -262,21 +262,21 @@
 </ul>
 </blockquote>
 <h3 id="Vue-安装"><a href="#Vue-安装" class="headerlink" title="Vue 安装"></a>Vue 安装</h3><p><strong>安装Vue的方式有很多</strong></p>
-<p> <strong>方式一：直接CDN引入</strong></p>
+<p>&emsp; <strong>方式一：直接CDN引入</strong></p>
 <blockquote>
 <ul>
 <li>开发环境版本，包含了有帮助的命令行警告<br> <code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</code></li>
 <li>生产环境版本，优化了尺寸和速度<br> <code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt;&lt;/script&gt;</code></li>
 </ul>
 </blockquote>
-<p> <strong>方式二：下载和引用</strong></p>
+<p>&emsp; <strong>方式二：下载和引用</strong></p>
 <blockquote>
 <ul>
 <li>开发环境:<a href="https://vuejs.org/js/vue.js" target="_blank" rel="noopener">https://vuejs.org/js/vue.js</a></li>
 <li>生产环境：<a href="https://vuejs.org/js/vue.min.js" target="_blank" rel="noopener">https://vuejs.org/js/vue.min.js</a></li>
 </ul>
 </blockquote>
-<p> <strong>方式三: NPM安装</strong></p>
+<p>&emsp; <strong>方式三: NPM安装</strong></p>
 <blockquote>
 <ul>
 <li><code>npm install vue</code> </li>
@@ -323,51 +323,40 @@
 </li>
 </ul>
 </blockquote>
-<h3 id="绑定属性-v-bind"><a href="#绑定属性-v-bind" class="headerlink" title="绑定属性 v-bind"></a>绑定属性 v-bind</h3><h4 id="v-bind-基本使用"><a href="#v-bind-基本使用" class="headerlink" title="v-bind 基本使用"></a>v-bind 基本使用</h4><p>   Mustache语法主要作用是将值插入到我们<strong>模板的内容当中</strong>，但是，除了内容需要动态来决定外，某些属性我们也希望动态来绑定，比如:</p>
+<h3 id="绑定属性-v-bind"><a href="#绑定属性-v-bind" class="headerlink" title="绑定属性 v-bind"></a>绑定属性 v-bind</h3><h4 id="v-bind-基本使用"><a href="#v-bind-基本使用" class="headerlink" title="v-bind 基本使用"></a>v-bind 基本使用</h4><p>  &emsp; Mustache语法主要作用是将值插入到我们<strong>模板的内容当中</strong>，但是，除了内容需要动态来决定外，某些属性我们也希望动态来绑定，比如:</p>
 <blockquote>
 <ul>
 <li>动态绑定 a 元素的 href 属性</li>
 <li>动态绑定 img 元素的 src 属性</li>
+<li>这时，可以使用 <code>v-bind</code>指令来动态绑定属性，<code>v-bind</code> 用于绑定一个或多个属性值，或者向另一个组件传递 <code>props</code>值<div align=center><img src="/images/v-bind1.jpg" width="400"></div>
+</li>
 </ul>
 </blockquote>
-<ul>
-<li><p>这时，可以使用 <code>v-bind</code>指令来动态绑定属性，<code>v-bind</code> 用于绑定一个或多个属性值，或者向另一个组件传递 <code>props</code>值</p>
-<div align=center><img src="/images/v-bind1.jpg" width="400"></div>
-
-<h4 id="v-bind语法糖"><a href="#v-bind语法糖" class="headerlink" title="v-bind语法糖"></a>v-bind语法糖</h4><p>有一个对应的语法糖（简写方式），在开发中，通常会使用语法糖的形式，因为这样更加简洁<br>简写方式如下：</p>
-<div align=center><img src="/images/v-bind2.jpg" width="400"></div>
-即省略 `v-bind `直接写 `:`
-
-<h4 id="v-bind-动态绑定-class"><a href="#v-bind-动态绑定-class" class="headerlink" title="v-bind 动态绑定 class"></a>v-bind 动态绑定 class</h4></li>
-<li><p><em>很多时候我们希望动态的来切换class，比如：*</em></p>
+<h4 id="v-bind语法糖"><a href="#v-bind语法糖" class="headerlink" title="v-bind语法糖"></a>v-bind语法糖</h4><p>   有一个对应的语法糖（简写方式），在开发中，通常会使用语法糖的形式，因为这样更加简洁<br>   简写方式如下：<br>     <div align=center><img src="/images/v-bind2.jpg" width="400"></div><br>   即省略 <code>v-bind</code>直接写 <code>:</code></p>
+<h4 id="v-bind-动态绑定-class"><a href="#v-bind-动态绑定-class" class="headerlink" title="v-bind 动态绑定 class"></a>v-bind 动态绑定 class</h4><p>   <strong>很多时候我们希望动态的来切换class，比如</strong></p>
 <blockquote>
 <ul>
 <li>当数据为某个状态时，字体显示红色</li>
 <li>当数据另一个状态时，字体显示黑色</li>
 </ul>
 </blockquote>
-</li>
-<li><p><em>绑定class有两种方式*</em></p>
+<p>   <strong>绑定class有两种方式</strong></p>
 <blockquote>
 <ul>
 <li>对象语法</li>
 <li>数组语法</li>
 </ul>
 </blockquote>
-<h4 id="v-bind-动态绑定style"><a href="#v-bind-动态绑定style" class="headerlink" title="v-bind 动态绑定style"></a>v-bind 动态绑定style</h4><p>我们可以利用 <code>v-bind:style</code>来绑定一些 <code>CSS</code>内联样式</p>
-<p>在写<code>CSS</code>属性名的时候，比如 <code>font-size</code>，可以使用驼峰式 (camelCase)<code>fontSize</code>，或短横线分隔 (kebab-case，记得用单引号括起来)<code>&#39;font-size&#39;</code></p>
-</li>
-<li><p><em>绑定style有两种方式*</em></p>
+<h4 id="v-bind-动态绑定style"><a href="#v-bind-动态绑定style" class="headerlink" title="v-bind 动态绑定style"></a>v-bind 动态绑定style</h4><p>   我们可以利用 <code>v-bind:style</code>来绑定一些 <code>CSS</code>内联样式</p>
+<p>   在写<code>CSS</code>属性名的时候，比如 <code>font-size</code>，可以使用驼峰式 (camelCase)<code>fontSize</code>，或短横线分隔 (kebab-case，记得用单引号括起来)<code>&#39;font-size&#39;</code></p>
+<p>   <strong>绑定style有两种方式</strong></p>
 <blockquote>
 <ul>
 <li>对象语法</li>
 <li>数组语法</li>
 </ul>
 </blockquote>
-<p>1对象语法</p>
-</li>
-</ul>
-<p>   2.数组语法</p>
+<p>   1对象语法<br>   2.数组语法</p>
 <h3 id="计算属性-computed"><a href="#计算属性-computed" class="headerlink" title="计算属性 computed"></a>计算属性 computed</h3><p>   在模板中可以直接通过插值语法显示一些 data 中的数据，但是在某些情况下，可能需要对数据进行一些转化后再显示，或者需要将多个数据结合起来进行显示，这时可以使用计算属性 computed</p>
 <h4 id="计算属性computes-的基本使用"><a href="#计算属性computes-的基本使用" class="headerlink" title="计算属性computes 的基本使用"></a>计算属性computes 的基本使用</h4><h4 id="计算属性的sette-r和-getter"><a href="#计算属性的sette-r和-getter" class="headerlink" title="计算属性的sette r和 getter"></a>计算属性的sette r和 getter</h4><pre><code>每个计算属性都包含一个 getter 和一个 setter，getter 用来读取值，setter 用来设置值（但 setter 不常用）</code></pre><h4 id="couputed与methods的区别"><a href="#couputed与methods的区别" class="headerlink" title="couputed与methods的区别"></a>couputed与methods的区别</h4><h3 id="事件监听-v-on"><a href="#事件监听-v-on" class="headerlink" title="事件监听 v-on"></a>事件监听 v-on</h3><h4 id="v-on-基本使用"><a href="#v-on-基本使用" class="headerlink" title="v-on 基本使用"></a>v-on 基本使用</h4><p>  在前端开发中，我们需要经常和用户进行交互，这个时候，就必须监听用户发生的事件，比如点击、拖拽、键盘事件等，在 Vue 中监听事件使用 <code>v-on</code>指令</p>
 <h3 id="v-on-修饰符"><a href="#v-on-修饰符" class="headerlink" title="v-on 修饰符"></a>v-on 修饰符</h3><h4 id="条件和循环"><a href="#条件和循环" class="headerlink" title="条件和循环"></a>条件和循环</h4><h4 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h4><h4 id="循环-V-for"><a href="#循环-V-for" class="headerlink" title="循环 V-for"></a>循环 V-for</h4><h4 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h4><h4 id="遍历对象"><a href="#遍历对象" class="headerlink" title="遍历对象"></a>遍历对象</h4>
