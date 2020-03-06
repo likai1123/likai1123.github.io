@@ -293,77 +293,61 @@
 </ul>
 </blockquote>
 <h4 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h4><blockquote>
-<blockquote>
 <ul>
 <li><code>v-html</code> 指令后面往往会跟上一个 <code>string</code> 类型，会将 <code>string</code> 的 <code>html</code> 解析出来并且进行渲染<div align=center><img src="/images/v-html.jpg" width="500"></div>
 </li>
 </ul>
 </blockquote>
-</blockquote>
 <h4 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h4><blockquote>
-<blockquote>
 <ul>
 <li><code>v-text</code> 作用和 <code>Mustache</code> 比较相似，都是用于将数据显示在界面中</li>
 <li><code>v-text</code> 通常情况下，接受一个 <code>string</code> 类型 <div align=center><img src="/images/v-text.jpg" width="500"></div>
 </li>
 </ul>
 </blockquote>
-</blockquote>
 <h4 id="v-pre"><a href="#v-pre" class="headerlink" title="v-pre"></a>v-pre</h4><blockquote>
-<blockquote>
 <ul>
 <li><code>v-pre</code> 用于跳过这个元素和它子元素的编译过程，显示原本的 Mustache 语法，将代码原封不动的解析出来 <div align=center><img src="/images/v-pre.jpg" width="400" height="300"></div>
 </li>
 </ul>
 </blockquote>
-</blockquote>
 <h4 id="v-cloak"><a href="#v-cloak" class="headerlink" title="v-cloak"></a>v-cloak</h4><blockquote>
-<blockquote>
 <ul>
 <li><code>v-cloak</code>将未解析出来的代码块进行隐藏，但基本不会用到 <div align=center><img src="/images/v-cloak.jpg" width="500"></div>
 </li>
 </ul>
 </blockquote>
-</blockquote>
 <h3 id="绑定属性-v-bind"><a href="#绑定属性-v-bind" class="headerlink" title="绑定属性 v-bind"></a>绑定属性 v-bind</h3><h4 id="v-bind-基本使用"><a href="#v-bind-基本使用" class="headerlink" title="v-bind 基本使用"></a>v-bind 基本使用</h4><p>   Mustache指令主要作用是将值插入到我们<strong>模板的内容当中</strong>，但是，除了内容需要动态来决定外，某些属性我们也希望动态来绑定，比如:</p>
-<blockquote>
 <blockquote>
 <ul>
 <li>动态绑定 a 元素的 href 属性</li>
 <li>动态绑定 img 元素的 src 属性</li>
 </ul>
 </blockquote>
-</blockquote>
 <p>   这时，可以使用 <code>v-bind</code>指令来动态绑定属性，<code>v-bind</code> 用于绑定一个或多个属性值，或者向另一个组件传递 <code>props</code>值</p>
 <h4 id="v-bind语法糖"><a href="#v-bind语法糖" class="headerlink" title="v-bind语法糖"></a>v-bind语法糖</h4><p>   v-bind 有一个对应的语法糖（简写方式），在开发中，通常会使用语法糖的形式，因为这样更加简洁<br>   简写方式如下：<br>     <img src=""><br>   即省略 <code>v-bind</code>直接写 <code>:</code></p>
 <h4 id="v-bind-动态绑定-class"><a href="#v-bind-动态绑定-class" class="headerlink" title="v-bind 动态绑定 class"></a>v-bind 动态绑定 class</h4><p>   <strong>很多时候我们希望动态的来切换class，比如：</strong></p>
-<blockquote>
 <blockquote>
 <ul>
 <li>当数据为某个状态时，字体显示红色</li>
 <li>当数据另一个状态时，字体显示黑色</li>
 </ul>
 </blockquote>
-</blockquote>
 <p>   <strong>绑定class有两种方式</strong></p>
-<blockquote>
 <blockquote>
 <ul>
 <li>对象语法</li>
 <li>数组语法</li>
 </ul>
-</blockquote>
 </blockquote>
 <h4 id="v-bind-动态绑定style"><a href="#v-bind-动态绑定style" class="headerlink" title="v-bind 动态绑定style"></a>v-bind 动态绑定style</h4><p>   我们可以利用 <code>v-bind:style</code>来绑定一些 <code>CSS</code>内联样式</p>
 <p>   在写<code>CSS</code>属性名的时候，比如 <code>font-size</code>，可以使用驼峰式 (camelCase)<code>fontSize</code>，或短横线分隔 (kebab-case，记得用单引号括起来)<code>&#39;font-size&#39;</code></p>
 <p>   <strong>绑定style有两种方式</strong></p>
 <blockquote>
-<blockquote>
 <ul>
 <li>对象语法</li>
 <li>数组语法</li>
 </ul>
-</blockquote>
 </blockquote>
 <p>   1对象语法<br>   2.数组语法</p>
 <h3 id="计算属性-computed"><a href="#计算属性-computed" class="headerlink" title="计算属性 computed"></a>计算属性 computed</h3><p>   在模板中可以直接通过插值语法显示一些 data 中的数据，但是在某些情况下，可能需要对数据进行一些转化后再显示，或者需要将多个数据结合起来进行显示，这时可以使用计算属性 computed</p>
