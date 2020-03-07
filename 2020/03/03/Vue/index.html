@@ -176,7 +176,7 @@
     </span>
     <span>
       <i class="fa fa-calendar-check"></i>
-      Edited on:&nbsp;2020-03-06
+      Edited on:&nbsp;2020-03-07
     </span>
     <span>
       <i class="fa fa-folder"></i>
@@ -350,15 +350,24 @@
 <h4 id="v-bind-动态绑定style"><a href="#v-bind-动态绑定style" class="headerlink" title="v-bind 动态绑定style"></a>v-bind 动态绑定style</h4><p>   我们可以利用 <code>v-bind:style</code>来绑定一些 <code>CSS</code>内联样式</p>
 <p>   在写<code>CSS</code>属性名的时候，比如 <code>font-size</code>，可以使用驼峰式 (camelCase)<code>fontSize</code>，或短横线分隔 (kebab-case，记得用单引号括起来)<code>&#39;font-size&#39;</code></p>
 <p>   <strong>绑定style有两种方式</strong></p>
+<p>  &emsp; &emsp;1.对象语法<br>  &emsp; &emsp;2.数组语法</p>
+<p>  &emsp; (1)绑定方式：对象语法</p>
 <blockquote>
 <ul>
-<li>对象语法</li>
-<li>数组语法</li>
+<li>对象语法的含义就是：class后面跟的是一个对象<br>对象语法有下面这些用法:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">用法一:直接通过&#123;&#125;绑定一个类</span><br><span class="line">  &lt;h2 :class&#x3D;&quot;&#123;&#39;active&#39;: isActive&#125;&quot;&gt;Hello World&lt;&#x2F;h2&gt; </span><br><span class="line"></span><br><span class="line">用法二:也可以通过判断，传入多个值</span><br><span class="line">  &lt;h2 :class&#x3D;&quot;&#123;&#39;active&#39;: isActive, &#39;line&#39;: isLine&#125;&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">用法三：和普通的类同时存在，并不冲突</span><br><span class="line"> 注：如果isActive和isLine都为true，那么会有title&#x2F;active&#x2F;line三个类</span><br><span class="line"> &lt;h2 class&#x3D;&quot;title&quot; :class&#x3D;&quot;&#123;&#39;active&#39;: isActive,&#39;line&#39;: isLine&#125;&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">用法四：如果过于复杂，可以放在一个methods或者computed中</span><br><span class="line"> 注：classes是一个计算属性</span><br><span class="line">   &lt;h2 class&#x3D;&quot;title&quot; :class&#x3D;&quot;classes&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </blockquote>
-<p>   1对象语法<br>   2.数组语法</p>
+<p>   &emsp; (2)绑定方式：数组语法</p>
+<blockquote>
+<ul>
+<li>数组语法的含义是:class后面跟的是一个数组<br> 数组语法有下面子这些用法： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">用法一：直接通过&#123;&#125;绑定一个类</span><br><span class="line">&lt;h2 :class&#x3D;&quot;[&#39;active&#39;]&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">用法二：也可以传入多个值</span><br><span class="line">&lt;h2 :class&#x3D;“[‘active’, &#39;line&#39;]&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">用法三：和普通的类同时存在，并不冲突</span><br><span class="line">注：会有title&#x2F;active&#x2F;line三个类</span><br><span class="line">&lt;h2 class&#x3D;&quot;title&quot; :class&#x3D;“[‘active’, &#39;line&#39;]&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">用法四：如果过于复杂，可以放在一个methods或者computed中</span><br><span class="line">注：classes是一个计算属性</span><br><span class="line">&lt;h2 class&#x3D;&quot;title&quot; :class&#x3D;&quot;classes&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
 <h3 id="计算属性-computed"><a href="#计算属性-computed" class="headerlink" title="计算属性 computed"></a>计算属性 computed</h3><p>   在模板中可以直接通过插值语法显示一些 data 中的数据，但是在某些情况下，可能需要对数据进行一些转化后再显示，或者需要将多个数据结合起来进行显示，这时可以使用计算属性 computed</p>
-<h4 id="计算属性computes-的基本使用"><a href="#计算属性computes-的基本使用" class="headerlink" title="计算属性computes 的基本使用"></a>计算属性computes 的基本使用</h4><h4 id="计算属性的sette-r和-getter"><a href="#计算属性的sette-r和-getter" class="headerlink" title="计算属性的sette r和 getter"></a>计算属性的sette r和 getter</h4><pre><code>每个计算属性都包含一个 getter 和一个 setter，getter 用来读取值，setter 用来设置值（但 setter 不常用）</code></pre><h4 id="couputed与methods的区别"><a href="#couputed与methods的区别" class="headerlink" title="couputed与methods的区别"></a>couputed与methods的区别</h4><h3 id="事件监听-v-on"><a href="#事件监听-v-on" class="headerlink" title="事件监听 v-on"></a>事件监听 v-on</h3><h4 id="v-on-基本使用"><a href="#v-on-基本使用" class="headerlink" title="v-on 基本使用"></a>v-on 基本使用</h4><p>  在前端开发中，我们需要经常和用户进行交互，这个时候，就必须监听用户发生的事件，比如点击、拖拽、键盘事件等，在 Vue 中监听事件使用 <code>v-on</code>指令</p>
+<h4 id="计算属性computes-的基本使用"><a href="#计算属性computes-的基本使用" class="headerlink" title="计算属性computes 的基本使用"></a>计算属性computes 的基本使用</h4><h4 id="计算属性的sette-r和-getter"><a href="#计算属性的sette-r和-getter" class="headerlink" title="计算属性的sette r和 getter"></a>计算属性的sette r和 getter</h4><p>  每个计算属性都包含一个 getter 和一个 setter，getter 用来读取值，setter 用来设置值（但 setter 不常用）</p>
+<h4 id="couputed与methods的区别"><a href="#couputed与methods的区别" class="headerlink" title="couputed与methods的区别"></a>couputed与methods的区别</h4><h3 id="事件监听-v-on"><a href="#事件监听-v-on" class="headerlink" title="事件监听 v-on"></a>事件监听 v-on</h3><h4 id="v-on-基本使用"><a href="#v-on-基本使用" class="headerlink" title="v-on 基本使用"></a>v-on 基本使用</h4><p>  在前端开发中，我们需要经常和用户进行交互，这个时候，就必须监听用户发生的事件，比如点击、拖拽、键盘事件等，在 Vue 中监听事件使用 <code>v-on</code>指令</p>
 <h3 id="v-on-修饰符"><a href="#v-on-修饰符" class="headerlink" title="v-on 修饰符"></a>v-on 修饰符</h3><h4 id="条件和循环"><a href="#条件和循环" class="headerlink" title="条件和循环"></a>条件和循环</h4><h4 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h4><h4 id="循环-V-for"><a href="#循环-V-for" class="headerlink" title="循环 V-for"></a>循环 V-for</h4><h4 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h4><h4 id="遍历对象"><a href="#遍历对象" class="headerlink" title="遍历对象"></a>遍历对象</h4>
   </div>
   <!--文末结束语-->
@@ -370,11 +379,6 @@
   </br><div class="mdui-divider-inset"></div>
   
   <nav>
-    
-      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/03/03/Markdown/">
-        <i class="fa fa-chevron-left"></i>
-        <span>Markdown</span>
-      </a>
     
     
       <a rel="next" class="post-nav-item mdui-float-right" href="/2020/03/03/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
