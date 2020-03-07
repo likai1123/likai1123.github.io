@@ -272,8 +272,8 @@
 <p>&emsp; <strong>方式二：下载和引用</strong></p>
 <blockquote>
 <ul>
-<li>开发环境:<a href="https://vuejs.org/js/vue.js" target="_blank" rel="noopener">https://vuejs.org/js/vue.js</a></li>
-<li>生产环境：<a href="https://vuejs.org/js/vue.min.js" target="_blank" rel="noopener">https://vuejs.org/js/vue.min.js</a></li>
+<li>开发环境:<pre><code>https://vuejs.org/js/vue.js</code></pre></li>
+<li>生产环境：<pre><code>https://vuejs.org/js/vue.min.js</code></pre></li>
 </ul>
 </blockquote>
 <p>&emsp; <strong>方式三: NPM安装</strong></p>
@@ -340,31 +340,64 @@
 <li>当数据另一个状态时，字体显示黑色</li>
 </ul>
 </blockquote>
-<p>   <strong>绑定class有两种方式</strong></p>
+<ul>
+<li><p><strong>绑定class有两种方式</strong></p>
 <blockquote>
 <ul>
 <li>对象语法</li>
 <li>数组语法</li>
 </ul>
 </blockquote>
-<h4 id="v-bind-动态绑定style"><a href="#v-bind-动态绑定style" class="headerlink" title="v-bind 动态绑定style"></a>v-bind 动态绑定style</h4><p>   我们可以利用 <code>v-bind:style</code>来绑定一些 <code>CSS</code>内联样式</p>
-<p>   在写<code>CSS</code>属性名的时候，比如 <code>font-size</code>，可以使用驼峰式 (camelCase)<code>fontSize</code>，或短横线分隔 (kebab-case，记得用单引号括起来)<code>&#39;font-size&#39;</code></p>
-<p>   <strong>绑定style有两种方式</strong></p>
-<p>  &emsp; &emsp;1.对象语法<br>  &emsp; &emsp;2.数组语法</p>
-<p>  &emsp; (1)绑定方式：对象语法</p>
+<p>&emsp; (1)绑定方式：对象语法</p>
 <blockquote>
 <ul>
-<li>对象语法的含义就是：class后面跟的是一个对象<br>对象语法有下面这些用法:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">用法一:直接通过&#123;&#125;绑定一个类</span><br><span class="line">  &lt;h2 :class&#x3D;&quot;&#123;&#39;active&#39;: isActive&#125;&quot;&gt;Hello World&lt;&#x2F;h2&gt; </span><br><span class="line"></span><br><span class="line">用法二:也可以通过判断，传入多个值</span><br><span class="line">  &lt;h2 :class&#x3D;&quot;&#123;&#39;active&#39;: isActive, &#39;line&#39;: isLine&#125;&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">用法三：和普通的类同时存在，并不冲突</span><br><span class="line"> 注：如果isActive和isLine都为true，那么会有title&#x2F;active&#x2F;line三个类</span><br><span class="line"> &lt;h2 class&#x3D;&quot;title&quot; :class&#x3D;&quot;&#123;&#39;active&#39;: isActive,&#39;line&#39;: isLine&#125;&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">用法四：如果过于复杂，可以放在一个methods或者computed中</span><br><span class="line"> 注：classes是一个计算属性</span><br><span class="line">   &lt;h2 class&#x3D;&quot;title&quot; :class&#x3D;&quot;classes&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br></pre></td></tr></table></figure>
-</li>
+<li>对象语法的含义就是：class后面跟的是一个对象</li>
 </ul>
 </blockquote>
-<p>   &emsp; (2)绑定方式：数组语法</p>
+<p>对象语法有下面这些用法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">  用法一:直接通过&#123;&#125;绑定一个类</span><br><span class="line">    &lt;h2 :class&#x3D;&quot;&#123;&#39;active&#39;: isActive&#125;&quot;&gt;Hello World&lt;&#x2F;h2&gt; </span><br><span class="line"></span><br><span class="line">  用法二:也可以通过判断，传入多个值</span><br><span class="line">    &lt;h2 :class&#x3D;&quot;&#123;&#39;active&#39;: isActive, &#39;line&#39;: isLine&#125;&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">  用法三：和普通的类同时存在，并不冲突</span><br><span class="line">   注：如果isActive和isLine都为true，那么会有title&#x2F;active&#x2F;line三个类</span><br><span class="line">   &lt;h2 class&#x3D;&quot;title&quot; :class&#x3D;&quot;&#123;&#39;active&#39;: isActive,&#39;line&#39;: isLine&#125;&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">  用法四：如果过于复杂，可以放在一个methods或者computed中</span><br><span class="line">   注：classes是一个计算属性</span><br><span class="line">     &lt;h2 class&#x3D;&quot;title&quot; :class&#x3D;&quot;classes&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">     body&gt;</span><br><span class="line">    &lt;div id&#x3D;&quot;app&quot; &gt; </span><br><span class="line">    &lt;h2 :class&#x3D;&quot;&#123;active: isActive,line:isLine&#125;&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;h2 :class&#x3D;&quot;getClass()&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h2&gt;</span><br><span class="line">   &lt;button v-on:click&#x3D;&quot;btnClick&quot;&gt;按钮&lt;&#x2F;button&gt;</span><br><span class="line">   &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;vue.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">     &lt;script&gt;</span><br><span class="line">    const app &#x3D; new Vue(&#123;</span><br><span class="line">        el:&#39;#app&#39;,</span><br><span class="line">        data:&#123;</span><br><span class="line">            message:&#39;今年是二零二零年&#39;,</span><br><span class="line">            isActive:true,</span><br><span class="line">            isLine:true</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            btnClick:function()&#123;</span><br><span class="line">                this.isActive&#x3D;!this.isActive</span><br><span class="line">            &#125;,</span><br><span class="line">            getClass:function()&#123;</span><br><span class="line">              return &#123;active: this.isActive,line:this.isLine&#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&emsp; (2)绑定方式：数组语法</p>
 <blockquote>
 <ul>
-<li>数组语法的含义是:class后面跟的是一个数组<br> 数组语法有下面子这些用法： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">用法一：直接通过&#123;&#125;绑定一个类</span><br><span class="line">&lt;h2 :class&#x3D;&quot;[&#39;active&#39;]&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">用法二：也可以传入多个值</span><br><span class="line">&lt;h2 :class&#x3D;“[‘active’, &#39;line&#39;]&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">用法三：和普通的类同时存在，并不冲突</span><br><span class="line">注：会有title&#x2F;active&#x2F;line三个类</span><br><span class="line">&lt;h2 class&#x3D;&quot;title&quot; :class&#x3D;“[‘active’, &#39;line&#39;]&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">用法四：如果过于复杂，可以放在一个methods或者computed中</span><br><span class="line">注：classes是一个计算属性</span><br><span class="line">&lt;h2 class&#x3D;&quot;title&quot; :class&#x3D;&quot;classes&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br></pre></td></tr></table></figure>
-</li>
+<li>对象语法的含义就是：class后面跟的是一个对象</li>
 </ul>
 </blockquote>
+<p>对象语法有下面这些用法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">用法一：直接通过[]]绑定一个类</span><br><span class="line">  &lt;h2 :class&#x3D;&quot;[&#39;active&#39;]&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">用法二:也可以通过判断，传入多个值</span><br><span class="line">  &lt;h2 :class&#x3D;“[‘active’, &#39;line&#39;]&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">用法三：和普通的类同时存在，并不冲突</span><br><span class="line">  注：会有title&#x2F;active&#x2F;line三个类</span><br><span class="line"> &lt;h2 class&#x3D;&quot;title&quot; :class&#x3D;“[‘active’, &#39;line&#39;]&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">用法四：如果过于复杂，可以放在一个methods或者computed中</span><br><span class="line"> 注：classes是一个计算属性</span><br><span class="line">   &lt;h2 class&#x3D;&quot;title&quot; :class&#x3D;&quot;classes&quot;&gt;Hello World&lt;&#x2F;h2&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="v-bind-动态绑定style"><a href="#v-bind-动态绑定style" class="headerlink" title="v-bind 动态绑定style"></a>v-bind 动态绑定style</h4><p>我们可以利用 <code>v-bind:style</code>来绑定一些 <code>CSS</code>内联样式</p>
+<p>在写<code>CSS</code>属性名的时候，比如 <code>font-size</code>，可以使用驼峰式 (camelCase)<code>fontSize</code>，或短横线分隔 (kebab-case，记得用单引号括起来)<code>&#39;font-size&#39;</code></p>
+<ul>
+<li><strong>绑定style有两种方式</strong><blockquote>
+<ul>
+<li>对象语法</li>
+<li>数组语法</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>&emsp; (1)绑定方式：对象语法</p>
+<blockquote>
+<ul>
+<li>对象语法的含义就是：style后面跟的是一个对象类型</li>
+<li>对象的key是CSS属性名称</li>
+<li>对象的value是具体的值，值可以来自data中的属性</li>
+</ul>
+</blockquote>
+<p>对象语法有下面这些用法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">&lt;!-- 50px 必须加上单引号 --&gt;</span><br><span class="line"> &lt;h2 :style&#x3D;&quot;&#123;fontSize:&#39;50px&#39;&#125;&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h2&gt;</span><br><span class="line"> &lt;!-- finalSize、finalColor当成一个变量使用 --&gt;</span><br><span class="line">  &lt;h2 :style&#x3D;&quot;&#123;fontSize:finalSize + &#39;px&#39;,color:finalColor&#125;&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h2&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">  const app &#x3D; new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &#39;今年是二零二零年&#39;,</span><br><span class="line">    finalSize: 100,</span><br><span class="line">    finalColor: &#39;red&#39;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>&emsp; (2)绑定方式：数组语法</p>
+<blockquote>
+<ul>
+<li>数组语法的含义就是：style后面跟的是一个数组类型</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &lt;h2 :style&#x3D;&quot;[baseStyles,baseStyles2]&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h2&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  const app &#x3D; new Vue(&#123;</span><br><span class="line">    el: &#39;.app&#39;,</span><br><span class="line">    data: &#123;</span><br><span class="line">      message: &#39;YuanyangLiao&#39;,</span><br><span class="line">      baseStyles: &#123;</span><br><span class="line">        color: &#39;red&#39;</span><br><span class="line">      &#125;,</span><br><span class="line">      baseStyles2: &#123;</span><br><span class="line">        fontSize: &#39;50px&#39;</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
 <h3 id="计算属性-computed"><a href="#计算属性-computed" class="headerlink" title="计算属性 computed"></a>计算属性 computed</h3><p>   在模板中可以直接通过插值语法显示一些 data 中的数据，但是在某些情况下，可能需要对数据进行一些转化后再显示，或者需要将多个数据结合起来进行显示，这时可以使用计算属性 computed</p>
 <h4 id="计算属性computes-的基本使用"><a href="#计算属性computes-的基本使用" class="headerlink" title="计算属性computes 的基本使用"></a>计算属性computes 的基本使用</h4><h4 id="计算属性的sette-r和-getter"><a href="#计算属性的sette-r和-getter" class="headerlink" title="计算属性的sette r和 getter"></a>计算属性的sette r和 getter</h4><p>  每个计算属性都包含一个 getter 和一个 setter，getter 用来读取值，setter 用来设置值（但 setter 不常用）</p>
 <h4 id="couputed与methods的区别"><a href="#couputed与methods的区别" class="headerlink" title="couputed与methods的区别"></a>couputed与methods的区别</h4><h3 id="事件监听-v-on"><a href="#事件监听-v-on" class="headerlink" title="事件监听 v-on"></a>事件监听 v-on</h3><h4 id="v-on-基本使用"><a href="#v-on-基本使用" class="headerlink" title="v-on 基本使用"></a>v-on 基本使用</h4><p>  在前端开发中，我们需要经常和用户进行交互，这个时候，就必须监听用户发生的事件，比如点击、拖拽、键盘事件等，在 Vue 中监听事件使用 <code>v-on</code>指令</p>
@@ -381,7 +414,7 @@
   <nav>
     
     
-      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/03/03/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/03/03/Markdown/">
         <span>Markdown</span>
         <i class="fa fa-chevron-right"></i>
       </a>
