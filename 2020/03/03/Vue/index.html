@@ -417,7 +417,9 @@
 <li><code>computed</code> 是属性调用，而 <code>methods</code> 是函数调用</li>
 <li><code>computed</code> 带有缓存功能，而 <code>methods</code> 没有<blockquote>
 <ul>
-<li><code>computed</code>定义的方法，我们是以属性访问的形式调用的 ,但是methods定义的方法，我们必须要加上来调用，</li>
+<li><code>computed</code>定义的方法，我们是以属性访问的形式调用的必须要加上<code>()</code> ,但是methods定义的方法，我们必须要加上<code>()</code>来调用.</li>
+<li>对于任何复杂逻辑，都应当使用计算属性</li>
+<li>computed 依赖于 data 中的数据，只有在它的相关依赖数据发生改变时才会重新求值</li>
 </ul>
 </blockquote>
 </li>
@@ -436,11 +438,6 @@
   </br><div class="mdui-divider-inset"></div>
   
   <nav>
-    
-      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/03/03/Markdown/">
-        <i class="fa fa-chevron-left"></i>
-        <span>Markdown</span>
-      </a>
     
     
       <a rel="next" class="post-nav-item mdui-float-right" href="/2020/03/03/hexo%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
